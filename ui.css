@@ -1,0 +1,37 @@
+
+:root{--bg:#000;--card:rgba(255,255,255,.05);--ink:#fff;--muted:#aab4c0;--accent:#8fb5ff;--ok:#7dffa7;--warn:#ffd27d;--err:#ff8b8b}
+html,body{height:100%}
+body.oled{margin:0;background:#000;color:#fff;font-family:Inter,Segoe UI,system-ui,Arial,sans-serif}
+.top{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;position:sticky;top:0;background:linear-gradient(180deg,#000 70%,transparent)}
+.badge{background:linear-gradient(180deg,#121620,#0b0f17);border:1px solid #1f2a3a;color:#9fb7ff;padding:6px 10px;border-radius:12px;font-size:12px}
+#grid{display:grid;grid-template-columns:1fr;gap:14px;padding:12px}
+.card{background:var(--card);backdrop-filter:blur(24px);border-radius:20px;padding:16px;border:1px solid rgba(255,255,255,.06);box-shadow:0 10px 40px rgba(0,0,0,.6)}
+.card .title{color:var(--muted);font-size:12px;letter-spacing:.3px}
+.card .value{font-size:28px;font-weight:600;margin:4px 0 2px}
+.card .sub{color:var(--muted);font-size:12px}
+.card.house .row{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.switch{display:flex;align-items:center;gap:8px;margin:6px 0}
+.switch input{appearance:none;width:42px;height:24px;border-radius:999px;background:#151a24;position:relative;outline:none;border:1px solid #243247}
+.switch input::after{content:"";position:absolute;left:2px;top:2px;width:18px;height:18px;border-radius:50%;background:#9fb7ff;transition:.2s}
+.switch input:checked{background:#0c1b33}
+.switch input:checked::after{transform:translateX(18px);background:#7dffa7}
+.switch span{font-size:13px;color:#cbd6e2}
+.people-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.person{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.04);padding:10px;border-radius:16px;border:1px solid rgba(255,255,255,.05);cursor:pointer}
+.person img{width:44px;height:44px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.6)}
+.person .name{font-weight:600}
+.person .status{font-size:12px;color:#aab4c0}
+.modal{position:fixed;inset:0;display:grid;place-items:end;background:rgba(0,0,0,.35);backdrop-filter:blur(2px)}
+.modal.hidden{display:none}
+.sheet{width:100%;max-width:560px;background:#05070b;border-top-left-radius:16px;border-top-right-radius:16px;border:1px solid #111826;padding:16px 16px 22px;box-shadow:0 -20px 50px rgba(0,0,0,.7)}
+.sheet .close{position:absolute;right:20px;top:10px;font-size:28px;background:transparent;border:0;color:#798aa6;cursor:pointer}
+.sheet .who{font-size:18px;font-weight:600;margin:4px 0 10px}
+.sheet .actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.sheet .actions button{background:#0b0f17;color:#d8e2f0;border:1px solid #1c2a3f;border-radius:12px;padding:12px;cursor:pointer}
+.sheet .actions button:hover{border-color:#2e4366}
+.pin{margin-top:10px;display:flex;gap:8px;align-items:center}
+.pin input{background:#0b0f17;border:1px solid #1c2a3f;border-radius:10px;color:#9fb7ff;padding:10px;width:100px;text-align:center;letter-spacing:3px}
+.pin .hint{font-size:12px;color:#5f6f89}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#0b0f17;border:1px solid #1c2a3f;color:#cfe1ff;padding:10px 14px;border-radius:12px}
+.toast.hidden{display:none}
+@media(min-width:760px){#grid{grid-template-columns:1fr 1fr}}

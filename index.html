@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automazione Casa</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="ui.css" />
+  <script defer src="config.js"></script>
+  <script defer src="ui.js"></script>
+</head>
+<body class="oled">
+  <header class="top">
+    <h1>Automazione Casa</h1>
+    <div id="stateBadge" class="badge">—</div>
+  </header>
+
+  <main id="grid">
+    <section class="card house">
+      <div class="row">
+        <div>
+          <div class="title">Stato casa</div>
+          <div id="state" class="value">—</div>
+          <div id="lastEvent" class="sub">—</div>
+        </div>
+        <div class="toggles">
+          <label class="switch"><input id="vacanza" type="checkbox"><span>Vacanza</span></label>
+          <label class="switch"><input id="override" type="checkbox"><span>Override</span></label>
+        </div>
+      </div>
+    </section>
+
+    <section class="people card">
+      <h2>Persone</h2>
+      <div id="people" class="people-grid"></div>
+    </section>
+
+    <section class="card">
+      <h2>Presenza ultime 24 ore</h2>
+      <canvas id="chart24h" height="120"></canvas>
+      <div class="sub">1 = presente, 0 = assente (campionamento 5 min)</div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="sheet">
+      <button class="close" aria-label="Chiudi">&times;</button>
+      <div class="who">—</div>
+      <div class="actions">
+        <button data-action="arrivo">Arrivo</button>
+        <button data-action="uscita">Uscita</button>
+        <button data-action="life">Invia LIFE</button>
+        <hr/>
+        <button data-action="vacanza_on">Vacanza ON</button>
+        <button data-action="vacanza_off">Vacanza OFF</button>
+        <button data-action="override_on">Override ON</button>
+        <button data-action="override_off">Override OFF</button>
+      </div>
+      <div class="pin">
+        <input id="pin" inputmode="numeric" maxlength="4" placeholder="PIN" />
+        <span class="hint">PIN richiesto per i comandi: 1526</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden">—</div>
+</body>
+</html>
