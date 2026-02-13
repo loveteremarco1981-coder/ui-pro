@@ -18,7 +18,7 @@ body.ios{margin:0;background:linear-gradient(180deg,#0a0c12,#0b0c10);color:var(-
 .badge{padding:4px 10px;border-radius:999px;font-size:12px}
 .badge.in{background:rgba(46,194,126,.2);color:#8be6b7}
 .badge.out{background:rgba(255,107,107,.18);color:#ff9a9a}
-.pin-row{display:flex;gap:10px}
+.pin-row{display:flex;gap:10px;margin-bottom:10px}
 .pin-input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:#0d0f14;color:var(--text);outline:none}
 .pin-input:focus{box-shadow:0 0 0 3px var(--ring);border-color:#1a59ff}
 .btn{padding:12px 16px;border-radius:12px;background:linear-gradient(180deg,#2a7bff,#0b62ff);color:#fff;border:0;font-weight:600}
@@ -40,3 +40,5 @@ body.ios{margin:0;background:linear-gradient(180deg,#0a0c12,#0b0c10);color:var(-
 .state--COMFY_NIGHT{background:linear-gradient(90deg, rgba(137,180,255,.25), rgba(137,180,255,.09));color:#bcd6ff}
 .state--SECURITY_DAY{background:linear-gradient(90deg, rgba(247,201,72,.22), rgba(247,201,72,.08));color:#ffe3a1}
 .state--SECURITY_NIGHT{background:linear-gradient(90deg, rgba(255,146,113,.22), rgba(255,146,113,.08));color:#ffc1b2}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);min-width:220px;max-width:80vw;padding:12px 16px;border-radius:12px;background:rgba(255,75,75,.95);color:#fff;font-weight:600;display:none;z-index:9999}
+.toast.show{display:block}
