@@ -4,33 +4,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>UI PRO — Casa</title>
-  <meta name="theme-color" content="#0b84ff" />
-  <link rel="icon" sizes="192x192" href="/ui-pro/icons/icon-192.png" />
-  <link rel="apple-touch-icon" href="/ui-pro/icons/icon-192.png" />
-  <link rel="stylesheet" href="css/ios-premium.css" />
+  <title>Casa — Controllo (no PIN)</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="ios">
+<body>
   <header class="app-header">
-    <div class="status-pill" id="state-pill">—</div>
-    <div class="meta">
-      <div id="meta-time">—</div>
-      <div id="meta-flags">—</div>
+    <div class="state-line">
+      <h1 id="state-pill">—</h1>
+      <div class="meta"><span id="meta-time">—</span> · <span id="meta-flags">—</span></div>
     </div>
   </header>
 
   <main class="container">
     <section class="card">
       <h2>Persone</h2>
-      <ul class="people" id="people-list"></ul>
+      <ul id="people-list" class="people"></ul>
     </section>
 
     <section class="card">
-      <h2>Comandi (PIN richiesto)</h2>
-      <div class="pin-row">
-        <input id="pin" class="pin-input" type="password" inputmode="numeric" placeholder="PIN" />
-        <button class="btn" id="save-pin">Salva</button>
-      </div>
+      <h2>Comandi (senza PIN)</h2>
       <div class="grid-2">
         <div class="tile">
           <div class="tile-header">Vacanza</div>
@@ -47,16 +39,30 @@
           </div>
         </div>
       </div>
+      <small class="hint">Questa versione non richiede PIN: ricorda di rimuovere il controllo PIN in GAS (doPost).</small>
     </section>
 
     <section class="card legend">
       <h2>Leggenda stati</h2>
       <ul>
-        <li><span class="dot comfy-day"></span> COMFY_DAY — Casa occupata, giorno: comfort + sicurezza minima</li>
-        <li><span class="dot comfy-night"></span> COMFY_NIGHT — Casa occupata, notte: comfort notturno</li>
-        <li><span class="dot sec-day"></span> SECURITY_DAY — Casa vuota, giorno: sicurezza attiva</li>
-        <li><span class="dot sec-night"></span> SECURITY_NIGHT — Casa vuota, notte: sicurezza elevata</li>
+        <li><span class="dot comfy-day"></span> COMFY_DAY — Casa occupata, giorno</li>
+        <li><span class="dot comfy-night"></span> COMFY_NIGHT — Casa occupata, notte</li>
+        <li><span class="dot sec-day"></span> SECURITY_DAY — Casa vuota, giorno</li>
+        <li><span class="dot sec-night"></span> SECURITY_NIGHT — Casa vuota, notte</li>
       </ul>
+    </section>
+
+    <section class="card">
+      <h2>Automazione & orari</h2>
+      <div class="grid-3">
+        <div class="kv"><div class="k">ALBA</div><div class="v" id="alba">—</div></div>
+        <div class="kv"><div class="k">TRAMONTO</div><div class="v" id="tramonto">—</div></div>
+        <div class="kv"><div class="k">ORA ADESSO</div><div class="v" id="ora">—</div></div>
+        <div class="kv"><div class="k">NOTTE?</div><div class="v" id="notte">—</div></div>
+        <div class="kv"><div class="k">Prossimo PIANTE (ALBA)</div><div class="v" id="next-piante-alba">—</div></div>
+        <div class="kv"><div class="k">Prossimo PIANTE (post chiusura)</div><div class="v" id="next-piante-close">—</div></div>
+        <div class="kv"><div class="k">Prossimo LATE CLOSE</div><div class="v" id="next-lateclose">—</div></div>
+      </div>
     </section>
 
     <section class="card">
@@ -66,10 +72,9 @@
   </main>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <footer class="app-footer">UI PRO · Premium iOS style</footer>
 
   <script src="config.js"></script>
   <script src="js/jsonp.js"></script>
-  <script src="js/ui-pro-premium.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
